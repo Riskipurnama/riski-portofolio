@@ -66,6 +66,7 @@ import HeroScene from '../3d/HeroScene.jsx'
   .hero-content {
     position: relative;
     z-index: 2;
+    width: 100%;
   }
 
   .eyebrow {
@@ -164,6 +165,7 @@ import HeroScene from '../3d/HeroScene.jsx'
   .hero-3d {
     position: relative;
     width: 100%;
+    height: 600px;
     z-index: 1;
   }
 
@@ -189,25 +191,51 @@ import HeroScene from '../3d/HeroScene.jsx'
   @media (max-width: 768px) {
     .hero {
       min-height: auto;
-      grid-template-columns: 1fr;
-      padding: 7rem 6% 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 8.5rem 6% 0;
+    }
+
+    .hero-content {
+      width: 100%;
+    }
+
+    .eyebrow {
+      margin-bottom: 1.5rem;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      white-space: nowrap;
     }
 
     h1 {
       font-size: clamp(4rem, 18vw, 6rem);
+      line-height: 0.84;
     }
 
     .description {
+      max-width: 100%;
+      margin: 2rem 0;
       font-size: 0.95rem;
+      line-height: 1.7;
     }
 
-    .hero-3d {
-      height: 450px;
-      margin-top: -2rem;
+    .actions {
+      gap: 0.7rem;
+    }
+
+    .primary-button,
+    .secondary-button {
+      padding: 0.8rem 1.1rem;
+      font-size: 0.78rem;
     }
 
     .scroll-indicator {
       margin-top: 3rem;
+    }
+
+    .hero-3d {
+      display:none;
     }
   }
 </style>
