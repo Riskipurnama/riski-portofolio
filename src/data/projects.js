@@ -7,7 +7,7 @@ export const projects = [
     description:
       'An e-learning website for Selective with a role-based access system for students, teachers, and administrators. Students can access course materials, schedules, and grades; teachers manage the materials for the classes they teach; and administrators manage classes and have full access to the system.',
     technologies: [
-      'CodeIgniter 3',
+      'CodeIgniter 4',
       'PHP',
       'MySQL',
       'AdminLTE',
