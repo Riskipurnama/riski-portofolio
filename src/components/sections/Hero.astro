@@ -1,0 +1,213 @@
+---
+import HeroScene from '../3d/HeroScene.jsx'
+---
+
+<section class="hero">
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      <span></span>
+      INFORMATION SYSTEMS GRADUATE
+    </div>
+
+    <h1>
+      Rizki
+      <br />
+      <span>Purnama.</span>
+    </h1>
+
+    <p class="description">
+      I build digital experiences through web development,
+      data, and modern technology.
+    </p>
+
+
+
+    <div class="scroll-indicator">
+      <span class="line"></span>
+      SCROLL TO EXPLORE
+    </div>
+
+  </div>
+
+  <div class="hero-3d">
+    <HeroScene client:load />
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    padding: 0 7%;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.08),
+      transparent 65%
+    );
+    filter: blur(40px);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+    opacity: 0.55;
+
+    margin-bottom: 1.8rem;
+  }
+
+  .eyebrow span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 12px white;
+  }
+
+  h1 {
+    margin: 0;
+
+    font-size: clamp(4.5rem, 9vw, 9rem);
+    line-height: 0.82;
+    letter-spacing: -0.07em;
+    font-weight: 600;
+  }
+
+  h1 span {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.65);
+  }
+
+  .description {
+    max-width: 480px;
+
+    margin: 2.2rem 0;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0.9rem 1.4rem;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .primary-button {
+    background: white;
+    color: black;
+  }
+
+  .primary-button:hover {
+    transform: translateY(-3px);
+  }
+
+  .primary-button span {
+    font-size: 1rem;
+  }
+
+  .secondary-button {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+  }
+
+  .secondary-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .hero-3d {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .scroll-indicator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 5rem;
+
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .line {
+    width: 45px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      grid-template-columns: 1fr;
+      padding: 7rem 6% 3rem;
+    }
+
+    h1 {
+      font-size: clamp(4rem, 18vw, 6rem);
+    }
+
+    .description {
+      font-size: 0.95rem;
+    }
+
+    .hero-3d {
+      height: 450px;
+      margin-top: -2rem;
+    }
+
+    .scroll-indicator {
+      margin-top: 3rem;
+    }
+  }
+</style>

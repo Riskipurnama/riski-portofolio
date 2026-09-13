@@ -1,0 +1,154 @@
+---
+import Navbar from '../components/ui/Navbar.astro'
+import ScrollAnimations from '../components/ui/ScrollAnimations.jsx'
+import SmoothScroll from '../components/ui/SmoothScroll.jsx'
+
+import Hero from '../components/sections/Hero.astro'
+import About from '../components/sections/About.astro'
+import Skills from '../components/sections/Skills.astro'
+import Projects from '../components/sections/Projects.astro'
+import Certificates from '../components/sections/Certificates.astro'
+import Experience from '../components/sections/Experience.astro'
+import Contact from '../components/sections/Contact.astro'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Rizki Purnama | Portfolio</title>
+
+		<style>
+		:global(*) {
+			box-sizing: border-box;
+		}
+
+		:global(html) {
+			scroll-behavior: smooth;
+			background: #050505;
+		}
+
+		:global(body) {
+			margin: 0;
+			background:
+			radial-gradient(
+				circle at 70% 10%,
+				rgba(255, 255, 255, 0.035),
+				transparent 28%
+			),
+			#050505;
+
+			color: #ffffff;
+
+			font-family:
+			Inter,
+			ui-sans-serif,
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			"Segoe UI",
+			sans-serif;
+
+			overflow-x: hidden;
+		}
+
+		:global(body::before) {
+			content: '';
+
+			position: fixed;
+			inset: 0;
+
+			z-index: 9999;
+
+			pointer-events: none;
+
+			opacity: 0.035;
+
+			background-image:
+			url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+		}
+
+		:global(body::after) {
+			content: '';
+
+			position: fixed;
+			inset: 0;
+
+			z-index: -1;
+
+			pointer-events: none;
+
+			background-image:
+			linear-gradient(
+				rgba(255, 255, 255, 0.025) 1px,
+				transparent 1px
+			),
+			linear-gradient(
+				90deg,
+				rgba(255, 255, 255, 0.025) 1px,
+				transparent 1px
+			);
+
+			background-size: 80px 80px;
+
+			mask-image:
+			linear-gradient(
+				to bottom,
+				black 0%,
+				rgba(0, 0, 0, 0.6) 40%,
+				transparent 100%
+			);
+		}
+
+		:global(::selection) {
+			background: rgba(255, 255, 255, 0.9);
+			color: #000;
+		}
+
+		:global(a) {
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		:global(img) {
+			max-width: 100%;
+		}
+
+		:global(section) {
+			position: relative;
+		}
+
+		:global(::-webkit-scrollbar) {
+			width: 8px;
+		}
+
+		:global(::-webkit-scrollbar-track) {
+			background: #050505;
+		}
+
+		:global(::-webkit-scrollbar-thumb) {
+			background: rgba(255, 255, 255, 0.18);
+			border-radius: 999px;
+		}
+
+		:global(::-webkit-scrollbar-thumb:hover) {
+			background: rgba(255, 255, 255, 0.3);
+		}
+		</style>
+  </head>
+
+  <body>
+	 <Navbar />
+
+	 <ScrollAnimations />
+	 <SmoothScroll />
+
+    <Hero />
+	<About />
+	<Skills />
+	<Projects />
+	<Certificates />
+	<Experience />
+	<Contact />
+  </body>
+</html>

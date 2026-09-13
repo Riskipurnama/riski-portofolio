@@ -1,0 +1,177 @@
+<section id="about" class="about">
+  <div class="section-label">
+    <span>01</span>
+    ABOUT ME
+  </div>
+
+  <div class="about-grid">
+    <div class="about-heading">
+      <p class="small-title">WHO I AM</p>
+
+      <h2>
+        Turning ideas into
+        <span>digital experiences.</span>
+      </h2>
+    </div>
+
+    <div class="about-content">
+      <p class="intro">
+        I’m Rizki Purnama, an Information Systems graduate with an
+        interest in web development, data, and emerging technology.
+      </p>
+
+      <p>
+        I enjoy building practical digital solutions, from web
+        applications and data-driven projects to interactive
+        experiences. My approach combines technical skills with
+        attention to detail and a focus on usability.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>2026</strong>
+          <span>Graduate</span>
+        </div>
+
+        <div class="stat">
+          <strong>6+</strong>
+          <span>Certificates</span>
+        </div>
+
+        <div class="stat">
+          <strong>∞</strong>
+          <span>Curiosity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    position: relative;
+    padding: 10rem 7%;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    margin-bottom: 6rem;
+
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .section-label span {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+  }
+
+  .small-title {
+    margin: 0 0 1.5rem;
+
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  h2 {
+    margin: 0;
+
+    max-width: 650px;
+
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    font-weight: 500;
+  }
+
+  h2 span {
+    display: block;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .about-content {
+    max-width: 550px;
+    padding-top: 2rem;
+  }
+
+  .about-content p {
+    margin: 0 0 1.5rem;
+
+    font-size: 1rem;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .about-content .intro {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 4rem;
+    padding-top: 2rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stat strong {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+  }
+
+  .stat span {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  @media (max-width: 768px) {
+    .about {
+      padding: 7rem 6%;
+    }
+
+    .section-label {
+      margin-bottom: 4rem;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .about-content {
+      padding-top: 0;
+    }
+
+    .stats {
+      margin-top: 3rem;
+    }
+  }
+</style>

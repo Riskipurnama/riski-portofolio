@@ -1,0 +1,582 @@
+---
+import { projects } from '../../data/projects.js'
+---
+
+<section id="projects" class="projects">
+  <div class="section-label">
+    <span>02</span>
+    SELECTED PROJECTS
+  </div>
+
+  <div class="projects-intro">
+    <h2>
+      Selected work
+      <span>that I’ve built.</span>
+    </h2>
+
+    <p>
+      A collection of web applications, digital systems, and
+      data-related work built through practical experience.
+    </p>
+  </div>
+
+  <div class="projects-list">
+    {projects.map((project) => (
+      <article class="project">
+
+        <div class="project-meta">
+          <span class="project-number">
+            {project.number}
+          </span>
+
+          <span class="project-category">
+            {project.category}
+          </span>
+        </div>
+
+        <div class="project-image-wrapper">
+
+          <div class="browser-bar">
+            <div class="browser-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <span class="browser-title">
+              {project.title}
+            </span>
+          </div>
+
+          <div class="project-image">
+            <img
+              src={project.image}
+              alt={project.title}
+              loading="lazy"
+            />
+
+            <div class="image-overlay">
+              <span>VIEW PROJECT</span>
+              <span class="overlay-arrow">↗</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="project-info">
+
+          <div class="project-title">
+            <h3>{project.title}</h3>
+            <span>↗</span>
+          </div>
+
+          <div class="project-details">
+            <p>{project.description}</p>
+
+            <div class="technologies">
+              {project.technologies.map((technology) => (
+                <span>{technology}</span>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .projects {
+    position: relative;
+
+    padding: 8rem 7% 5rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    overflow: hidden;
+  }
+
+  /* Background glow */
+  .projects::before {
+    content: '';
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    top: 10%;
+    right: -350px;
+
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.055),
+      transparent 65%
+    );
+
+    filter: blur(50px);
+
+    pointer-events: none;
+  }
+
+  /* =========================
+     SECTION LABEL
+  ========================= */
+
+  .section-label {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 4rem;
+
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .section-label span {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  /* =========================
+     INTRO
+  ========================= */
+
+  .projects-intro {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 5rem;
+
+    align-items: end;
+
+    margin-bottom: 5rem;
+  }
+
+  .projects-intro h2 {
+    margin: 0;
+
+    font-size: clamp(3.5rem, 7vw, 7rem);
+
+    line-height: 0.88;
+
+    letter-spacing: -0.065em;
+
+    font-weight: 600;
+  }
+
+  .projects-intro h2 span {
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+  }
+
+  .projects-intro p {
+    max-width: 420px;
+
+    margin: 0;
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* =========================
+     PROJECT LIST
+  ========================= */
+
+  .projects-list {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6rem;
+  }
+
+  .project {
+    position: relative;
+  }
+
+  /* =========================
+     PROJECT META
+  ========================= */
+
+  .project-meta {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 1.2rem;
+  }
+
+  .project-number {
+    font-size: 0.7rem;
+
+    letter-spacing: 0.15em;
+
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .project-category {
+    font-size: 0.6rem;
+
+    letter-spacing: 0.2em;
+
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  /* =========================
+     BROWSER FRAME
+  ========================= */
+
+    .project-image-wrapper {
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    width: 78%;
+
+    margin: 0 auto;
+
+    padding: 9px;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        0 0 50px rgba(255, 255, 255, 0.025);
+
+    transition:
+        transform 0.5s ease,
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+    }
+
+  .project:hover .project-image-wrapper {
+    transform: translateY(-4px);
+
+    border-color: rgba(255, 255, 255, 0.2);
+
+    box-shadow:
+      0 35px 90px rgba(0, 0, 0, 0.5),
+      0 0 70px rgba(255, 255, 255, 0.04);
+  }
+
+  /* =========================
+     BROWSER BAR
+  ========================= */
+
+    .browser-bar::after {
+    content: '';
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 5px;
+
+    width: 35%;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+    }
+
+    .project:hover .browser-bar::after {
+    opacity: 1;
+    }
+
+  .browser-dots {
+    display: flex;
+
+    gap: 5px;
+  }
+
+  .browser-dots span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .browser-title {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.08em;
+
+    color: rgba(255, 255, 255, 0.3);
+
+    white-space: nowrap;
+  }
+
+  /* =========================
+     PROJECT IMAGE
+  ========================= */
+
+  .project-image {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+      transform 0.8s cubic-bezier(0.2, 0.65, 0.25, 1),
+      filter 0.8s ease;
+  }
+
+  .project:hover .project-image img {
+    transform: scale(1.035);
+
+    filter: brightness(0.72);
+  }
+
+  /* =========================
+     IMAGE OVERLAY
+  ========================= */
+
+  .image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    opacity: 0;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.2em;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    transition: opacity 0.4s ease;
+  }
+
+  .project:hover .image-overlay {
+    opacity: 1;
+  }
+
+  .overlay-arrow {
+    font-size: 1.1rem;
+  }
+
+  /* =========================
+     PROJECT INFORMATION
+  ========================= */
+
+  .project-info {
+    display: grid;
+
+    grid-template-columns: 1fr 0.8fr;
+
+    gap: 4rem;
+
+    padding-top: 1.8rem;
+  }
+
+  .project-title h3 {
+    margin: 0;
+
+    font-size: clamp(2rem, 4vw, 4rem);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -0.04em;
+  }
+
+  .project-title > span {
+    display: inline-block;
+
+    margin-top: 0.8rem;
+
+    font-size: 1.5rem;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    transition:
+      transform 0.35s ease,
+      color 0.35s ease;
+  }
+
+  .project:hover .project-title > span {
+    transform: translate(5px, -5px);
+
+    color: white;
+  }
+
+  .project-details p {
+    margin: 0 0 1.2rem;
+
+    max-width: 500px;
+
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* =========================
+     TECHNOLOGIES
+  ========================= */
+
+  .technologies {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+  }
+
+    .technologies span {
+    position: relative;
+    overflow: hidden;
+
+    padding: 0.45rem 0.7rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 999px;
+
+    font-size: 0.65rem;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .technologies span:hover {
+    background: rgba(255, 255, 255, 0.08);
+
+    border-color: rgba(255, 255, 255, 0.3);
+
+    color: white;
+
+    transform: translateY(-2px);
+    }
+
+  .project:hover .technologies span {
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  /* =========================
+     MOBILE
+  ========================= */
+
+  @media (max-width: 768px) {
+    .projects {
+      padding: 7rem 6% 4rem;
+    }
+
+    .section-label {
+      margin-bottom: 3rem;
+    }
+
+    .projects-intro {
+      grid-template-columns: 1fr;
+
+      gap: 2rem;
+
+      margin-bottom: 4rem;
+    }
+
+    .projects-intro h2 {
+      font-size: clamp(3rem, 13vw, 5rem);
+    }
+
+    .projects-intro p {
+      font-size: 0.9rem;
+    }
+
+    .projects-list {
+      gap: 5rem;
+    }
+
+    .project-image-wrapper {
+      width: 100%;
+
+      padding: 6px;
+    }
+
+    .browser-bar {
+      height: 28px;
+    }
+
+    .project-image {
+      aspect-ratio: 4 / 3;
+    }
+
+    .project-info {
+      grid-template-columns: 1fr;
+
+      gap: 1.5rem;
+
+      padding-top: 1.5rem;
+    }
+
+    .project-title h3 {
+      font-size: 2.2rem;
+    }
+
+    .project-details p {
+      font-size: 0.85rem;
+    }
+  }
+</style>

@@ -1,0 +1,321 @@
+<section id="contact" class="contact">
+  <div class="section-label">
+    <span>05</span>
+    CONTACT
+  </div>
+
+  <div class="contact-main">
+    <div class="contact-heading">
+      <p class="small-title">LET'S CONNECT</p>
+
+      <h2>
+        Let’s build
+        <span>something great.</span>
+      </h2>
+    </div>
+
+    <div class="contact-content">
+      <p>
+        Have an opportunity, project, or idea worth discussing?
+        Feel free to reach out through any of the channels below.
+      </p>
+
+      <div class="contact-links">
+
+        <a
+          href="https://wa.me/6287761322364"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-link"
+        >
+          <div>
+            <span class="contact-type">WHATSAPP</span>
+            <strong>Chat with me</strong>
+          </div>
+
+          <span class="contact-arrow">↗</span>
+        </a>
+
+        <a
+          href="mailto:purnama.riski44@gmail.com"
+          class="contact-link"
+        >
+          <div>
+            <span class="contact-type">EMAIL</span>
+            <strong>Send an email</strong>
+          </div>
+
+          <span class="contact-arrow">↗</span>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/riski-purnama-2b2103409?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-link"
+        >
+          <div>
+            <span class="contact-type">LINKEDIN</span>
+            <strong>View my profile</strong>
+          </div>
+
+          <span class="contact-arrow">↗</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span>© 2026 Rizki Purnama</span>
+
+    <span>
+      INFORMATION SYSTEMS · WEB · DATA · TECHNOLOGY
+    </span>
+  </footer>
+</section>
+
+<style>
+  .contact {
+    position: relative;
+
+    padding: 8rem 7% 2rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    overflow: hidden;
+  }
+
+  .contact::before {
+    content: '';
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    right: -250px;
+    bottom: -250px;
+
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.06),
+      transparent 65%
+    );
+
+    filter: blur(50px);
+
+    pointer-events: none;
+  }
+
+  .section-label {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 5rem;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.25em;
+
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .section-label span {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .contact-main {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 5rem;
+
+    padding-bottom: 8rem;
+  }
+
+  .small-title {
+    margin: 0 0 1.5rem;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.2em;
+
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .contact-heading h2 {
+    margin: 0;
+
+    font-size: clamp(3.5rem, 7vw, 7rem);
+
+    line-height: 0.88;
+
+    letter-spacing: -0.065em;
+
+    font-weight: 600;
+  }
+
+  .contact-heading h2 span {
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+  }
+
+  .contact-content {
+    padding-top: 2.8rem;
+  }
+
+  .contact-content > p {
+    max-width: 420px;
+
+    margin: 0 0 2.5rem;
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .contact-links {
+    display: flex;
+
+    flex-direction: column;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .contact-link {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 1.2rem 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    text-decoration: none;
+
+    transition:
+      padding 0.35s ease,
+      opacity 0.35s ease;
+  }
+
+  .contact-link:hover {
+    padding-left: 10px;
+  }
+
+  .contact-link > div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+  .contact-type {
+    font-size: 0.55rem;
+
+    letter-spacing: 0.2em;
+
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .contact-link strong {
+    font-size: 0.9rem;
+
+    font-weight: 400;
+  }
+
+  .contact-arrow {
+    font-size: 1.2rem;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    transition:
+      transform 0.35s ease,
+      color 0.35s ease;
+  }
+
+  .contact-link:hover .contact-arrow {
+    transform: translate(4px, -4px);
+
+    color: white;
+  }
+
+  .footer {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    padding-top: 1.5rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.12em;
+
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .contact {
+      padding: 7rem 6% 2rem;
+    }
+
+    .section-label {
+      margin-bottom: 3.5rem;
+    }
+
+    .contact-main {
+      grid-template-columns: 1fr;
+
+      gap: 2rem;
+
+      padding-bottom: 5rem;
+    }
+
+    .contact-heading h2 {
+      font-size: clamp(3rem, 13vw, 5rem);
+    }
+
+    .contact-content {
+      padding-top: 0;
+    }
+
+    .contact-content > p {
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      flex-direction: column;
+
+      align-items: flex-start;
+
+      gap: 0.7rem;
+
+      line-height: 1.5;
+    }
+  }
+</style>
